@@ -1,4 +1,6 @@
 class Photo < ApplicationRecord
+  mount_uploader :image_upload, ImageUploadUploader
+
   # Direct associations
 
   has_many   :likes,
