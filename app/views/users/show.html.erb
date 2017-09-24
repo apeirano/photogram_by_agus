@@ -12,7 +12,13 @@
       <dd><%= @user.password %></dd>
 
       <dt>Friends</dt>
-      <dd><%= @user.friends_id %></dd>
+      <dd>
+        <% if @user.friends.present? %>
+          <a href="/friend_requests/<%= @user.friends_id %>">
+            <%= @user.friends.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

@@ -9,7 +9,13 @@
       <dd><%= @comment.body %></dd>
 
       <dt>Photo</dt>
-      <dd><%= @comment.photo_id %></dd>
+      <dd>
+        <% if @comment.photo.present? %>
+          <a href="/photos/<%= @comment.photo_id %>">
+            <%= @comment.photo.caption %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

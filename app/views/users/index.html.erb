@@ -19,7 +19,13 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.password %></td>
-        <td><%= user.friends.user_id %></td>
+        <td>
+          <% if user.friends.present? %>
+            <a href="/friend_requests/<%= user.friends.id %>">
+              <%= user.friends.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/users/<%= user.id %>" class="btn btn-primary">Show</a>
         </td>
