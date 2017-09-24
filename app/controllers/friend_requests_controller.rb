@@ -6,6 +6,7 @@ class FriendRequestsController < ApplicationController
   end
 
   def show
+    @user = User.new
     @friend_request = FriendRequest.find(params[:id])
 
     render("friend_requests/show.html.erb")
